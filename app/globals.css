@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 5% 35%;
+    --border: 240 6% 90%;
+
+    --primary: 32 100% 60%;
+    --primary-foreground: 0 0% 10%;
+    --accent: 32 100% 60%;
+    --accent-foreground: 0 0% 10%;
+  }
+
+  .dark {
+    --background: 220 14% 5%;
+    --foreground: 0 0% 98%;
+    --card: 220 14% 7%;
+    --card-foreground: 0 0% 98%;
+    --muted: 220 14% 10%;
+    --muted-foreground: 220 10% 65%;
+    --border: 220 13% 18%;
+
+    --primary: 32 100% 60%;
+    --primary-foreground: 0 0% 10%;
+    --accent: 32 100% 60%;
+    --accent-foreground: 0 0% 10%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+@layer utilities {
+  /* Liquid blob animations (slow, organic paths) */
+  @keyframes blob-1 {
+    0%   { transform: translate(-20%, 10%)  scale(1);   }
+    50%  { transform: translate(25%, -15%)  scale(1.25);}
+    100% { transform: translate(-20%, 10%)  scale(1);   }
+  }
+  @keyframes blob-2 {
+    0%   { transform: translate(10%, -20%)  scale(1);   }
+    50%  { transform: translate(-15%, 25%)  scale(1.15);}
+    100% { transform: translate(10%, -20%)  scale(1);   }
+  }
+  @keyframes blob-3 {
+    0%   { transform: translate(15%, 10%)   scale(0.9); }
+    50%  { transform: translate(-10%, -15%) scale(1.1); }
+    100% { transform: translate(15%, 10%)   scale(0.9); }
+  }
+
+  /* Utility classes for the blobs */
+  .liquid-blob {
+    position: absolute;
+    border-radius: 9999px;                /* fully round */
+    filter: blur(40px);
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  .animate-blob-1 { animation: blob-1 20s ease-in-out infinite; }
+  .animate-blob-2 { animation: blob-2 24s ease-in-out infinite; }
+  .animate-blob-3 { animation: blob-3 28s ease-in-out infinite; }
+  .anim-delay-1500 { animation-delay: 1.5s; }
+  .anim-delay-3000 { animation-delay: 3s; }
+}

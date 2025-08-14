@@ -1,0 +1,38 @@
+# === Dependencies ===
+node_modules/
+
+# === Next.js build artifacts ===
+.next/
+.next/cache/
+out/
+.vercel/
+
+# === Env files (keep an .env.example if you want) ===
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# === Logs ===
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# === Caches / tooling ===
+.cache/
+.turbo/
+turbo/
+.eslintcache
+
+# === Testing ===
+coverage/
+
+# === OS / Editors ===
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
